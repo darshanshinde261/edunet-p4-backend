@@ -1,5 +1,5 @@
 import express from 'express';
-import { addTransactionController, deleteTransactionController, getAllTransactionController, updateTransactionController } from '../controllers/transactionController.js';
+import { addTransactionController, deleteTransactionController, getAllTransactionController, updateTransactionController,deleteMultipleTransactionsController } from '../controllers/transactionController.js';
 
 const router = express.Router();
 
@@ -10,5 +10,8 @@ router.route("/getTransaction").post(getAllTransactionController);
 router.route("/deleteTransaction/:id").post(deleteTransactionController);
 
 router.route('/updateTransaction/:id').put(updateTransactionController);
+
+router.delete("/deleteMultiple", deleteMultipleTransactionsController);
+
 
 export default router;
